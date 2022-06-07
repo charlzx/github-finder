@@ -1,0 +1,48 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: rgb(53, 49, 49);
+   color: whitesmoke;
+   font-size: 18px;
+}
+
+section {
+   border: 1px solid rgba(245, 245, 245, 0.35);
+   border-radius: 5px;
+   padding: 20px;
+}
+
+#inputs {
+   width: fit-content;
+   margin: 10vh auto 20px;
+}
+
+#inputs div {
+   margin-bottom: 15px;
+}
+
+#inputs h2 {
+   margin-bottom: 5px;
+}
+
+#inputs form input {
+   border: 1px solid rgba(245, 245, 245, 0.35);
+   background-color: transparent;
+   caret-color: whitesmoke;
+   font-family: inherit;
+   color: whitesmoke;
+   font-size: inherit;
+   border-radius: 5px;
+   padding: 7.5px;
+   width: 100%;
+   outline: 0;
+}
+
+#results {
+   width: fit-content;
+   margin: 0 auto;
+}
