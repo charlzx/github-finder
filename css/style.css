@@ -20,7 +20,8 @@ section {
 }
 
 #inputs {
-   width: fit-content;
+   width: 90%;
+   max-width: 800px;
    margin: 10vh auto 20px;
 }
 
@@ -47,7 +48,8 @@ section {
 
 #profile {
    margin: 0 auto;
-   width: fit-content;
+   width: 90%;
+   max-width: 800px;
 
    display: flex;
    /* grid-template-columns: 1fr 2fr; */
@@ -100,3 +102,29 @@ section {
    margin: 5px 0;
 }
 
+.blog a, .twitter a {
+   color: inherit;
+   text-decoration: underline rgb(150, 145, 145);
+}
+
+.error {
+   width: 90%;
+   max-width: 800px;
+   margin: 7.5px auto;
+   background-color: rgb(197, 27, 27);
+   padding: 10px 20px;
+   border-radius: 5px;
+}
+
+@media (max-width: 650px) {
+   #profile {
+      display: block;
+   }
+
+   .profile_id {
+      margin-bottom: 20px;
+   }
+   /* .profile_id img, .profile_id a {
+      width: 60%;
+   } */
+}

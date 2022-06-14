@@ -22,7 +22,7 @@ search.addEventListener('keyup', (e) => {
          console.clear()
 
          if (data.userData.message == 'Not Found'){
-            console.log("user does not exist")
+            ui.showError()
 
          } else {
             console.log(inputText)
@@ -33,6 +33,6 @@ search.addEventListener('keyup', (e) => {
       })
 
    } else {
-
+      ui.clearProfile()
    }
 })

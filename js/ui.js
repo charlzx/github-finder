@@ -13,17 +13,18 @@ class UI {
       // remove https:// from blog.website link
       if (user.blog.includes('https://')) {
          let removeHttps = user.blog.split('https://')
-         console.log(removeHttps)
-
          user.blog = removeHttps[1]
       }
 
       // remove http:// from blog.website link
       if (user.blog.includes('http://')) {
          let removeHttp = user.blog.split('http://')
-         console.log(removeHttp)
-
          user.blog = removeHttp[1]
+      }
+      
+      // set github handle as username if there isn't a username
+      if (user.name === null){
+         user.name = user.login
       }
    
 
@@ -35,7 +36,7 @@ class UI {
          </div>
 
          <div class="profile_details">
-            <h1>${user.name}</h1>
+            <h1 class="name">${user.name}</h1>
 
             <div class="other_details">
                <p>Member Since: ${user.created_at}</p>
@@ -60,5 +61,39 @@ class UI {
          document.querySelector(".location").style.display = "none"
       }
 
+   }
+
+   clearProfile (){
+      this.profile.innerHTML = ""
+   }
+
+   showError (){
+      this.clearError()
+
+      let input = document.querySelector('#inputs')
+
+      let errorDiv = document.createElement('div')
+      errorDiv.className = "error"
+      errorDiv.innerHTML = "User doesn't exist"
+
+      input.style.marginTop = "20px";
+
+      document.body.insertBefore(errorDiv, input)
+
+      setTimeout(() => {
+         this.clearError()
+
+         input.style.marginTop = "10vh";
+
+      }, 3000)
+
+   }
+
+   clearError (){
+      let errorAlert = document.querySelector('.error')
+
+      if (errorAlert){
+         errorAlert.remove()
+      }
    }
 }
