@@ -14,12 +14,12 @@ body {
 }
 
 section {
-   border: 1px solid rgba(245, 245, 245, 0.35);
    border-radius: 5px;
    padding: 20px;
 }
 
 #inputs {
+   border: 1px solid rgba(245, 245, 245, 0.35);
    width: 90%;
    max-width: 800px;
    margin: 10vh auto 20px;
@@ -115,6 +115,29 @@ section {
    padding: 10px 20px;
    border-radius: 5px;
 }
+
+#repos {
+   margin: 30px auto 20px;
+   width: 90%;
+   max-width: 800px;
+   border: 0;
+   padding: 0;
+}
+
+#repos div {   
+   border: 1px solid rgba(245, 245, 245, 0.35);
+   width: 100%;
+   padding: 10px;
+   border-radius: 5px;
+   margin: 10px 0;
+}
+
+#repos a {
+   color: inherit;
+   text-decoration: underline rgb(150, 145, 145);
+   
+}
+
 
 @media (max-width: 650px) {
    #profile {

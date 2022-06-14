@@ -25,14 +25,20 @@ search.addEventListener('keyup', (e) => {
             ui.showError()
 
          } else {
-            console.log(inputText)
+            // console.log(inputText)
             // console.log(data)
 
             ui.ShowProfile(data.userData)
+            ui.ShowRepos(data.reposData)
          }
       })
 
    } else {
       ui.clearProfile()
+      ui.clearRepos()
+
+      let profiles = document.querySelector('#profile')
+      profiles.style.border = ""
+
    }
 })

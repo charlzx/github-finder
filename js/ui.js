@@ -4,7 +4,6 @@ class UI {
    }
 
    ShowProfile (user){
-      console.log(user)
 
       // remove the time, display only the date the account was created
       let split = user.created_at.split('T')
@@ -26,9 +25,9 @@ class UI {
       if (user.name === null){
          user.name = user.login
       }
+      
+      this.profile.style.border = "1px solid rgba(245, 245, 245, 0.35)"
    
-
-    
       this.profile.innerHTML = `
          <div class="profile_id">
             <img src="${user.avatar_url}" alt="image of ${user.login}">
@@ -95,5 +94,33 @@ class UI {
       if (errorAlert){
          errorAlert.remove()
       }
+   }
+
+   ShowRepos (repos){
+      let repos_div = document.querySelector('#repos')
+      let repos_list = `
+         <h1>Latest Repositories</h1>
+      `
+      repos.forEach((repo) => {
+         // console.log(repo)
+
+         repos_list += `
+            <div>
+               <a href="${repo.html_url}" target="blank_"><p>${repo.name}</p></a>
+            </div>
+         `
+      })
+
+      
+      if (repos == ""){
+         repos_div.innerHTML = ""
+      } else {
+         repos_div.innerHTML = repos_list
+      }
+   }
+
+   clearRepos (){
+      let repos_div = document.querySelector('#repos')
+      repos_div.innerHTML = ""
    }
 }
