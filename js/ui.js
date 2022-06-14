@@ -6,7 +6,27 @@ class UI {
    ShowProfile (user){
       console.log(user)
 
- 
+      // remove the time, display only the date the account was created
+      let split = user.created_at.split('T')
+      user.created_at = split[0]
+
+      // remove https:// from blog.website link
+      if (user.blog.includes('https://')) {
+         let removeHttps = user.blog.split('https://')
+         console.log(removeHttps)
+
+         user.blog = removeHttps[1]
+      }
+
+      // remove http:// from blog.website link
+      if (user.blog.includes('http://')) {
+         let removeHttp = user.blog.split('http://')
+         console.log(removeHttp)
+
+         user.blog = removeHttp[1]
+      }
+   
+
     
       this.profile.innerHTML = `
          <div class="profile_id">
