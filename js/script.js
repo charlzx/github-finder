@@ -4,9 +4,9 @@ const results = document.querySelector('#results')
 const input = document.querySelector('input[type="text"]')
 
 // prevent page from reloading when form is submitted
-// form.addEventListener('submit', (e) => {
-//    e.preventDefault();
-// })
+form.addEventListener('submit', (e) => {
+   e.preventDefault();
+})
 
 // initialize the Github class
 const github = new Github; 
@@ -14,9 +14,9 @@ const github = new Github;
 const ui = new UI;
 
 
-// search.addEventListener('keyup', (e) => {
-form.addEventListener('submit', (e) => {
-   console.log(input.value)
+search.addEventListener('keyup', (e) => {
+// form.addEventListener('submit', (e) => {
+   // console.log(input.value)
    const inputText = input.value
 
    if (inputText !== '') {
@@ -49,6 +49,6 @@ form.addEventListener('submit', (e) => {
 
    }
 
-   // prevent page from reloading when form is submitted
-   e.preventDefault();
+   // // prevent page from reloading when form is submitted
+   // e.preventDefault();
 })
