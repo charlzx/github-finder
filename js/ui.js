@@ -38,6 +38,7 @@ class UI {
             <h1 class="name">${user.name}</h1>
 
             <div class="other_details">
+               <p>Username: ${user.login}</p>
                <p>Member Since: ${user.created_at}</p>
                <p class="location">Location: ${user.location}</p>
                <p class="blog">Website/Blog: <a href="https://${user.blog}" target="blank_">${user.blog}</a></p>
@@ -66,14 +67,14 @@ class UI {
       this.profile.innerHTML = ""
    }
 
-   showError (){
+   showError (errorMessage, milliSeconds){
       this.clearError()
 
       let input = document.querySelector('#inputs')
 
       let errorDiv = document.createElement('div')
       errorDiv.className = "error"
-      errorDiv.innerHTML = "User doesn't exist"
+      errorDiv.innerHTML = errorMessage
 
       input.style.marginTop = "20px";
 
@@ -84,7 +85,7 @@ class UI {
 
          input.style.marginTop = "10vh";
 
-      }, 3000)
+      }, milliSeconds)
 
    }
 
